@@ -32,6 +32,9 @@ yarn-error.log*
 .memory/
 *.local.json
 
+# Local runtime data (deployment credentials, release compose files)
+.skillhub-runtime/
+
 # Java / Spring Boot
 .gradle/
 build/
