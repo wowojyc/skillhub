@@ -4,7 +4,8 @@ import { normalizeSearchQuery } from '@/shared/lib/search-query'
 // SearchIcon 仍用于 Hero 搜索框；其余图标仅被下方已注释的 Features 区块使用，一并注释保留
 // import { PackageOpen, Terminal, Shield, Users, GitBranch, Search as SearchIcon, Settings } from 'lucide-react'
 import { Search as SearchIcon } from 'lucide-react'
-import { LandingQuickStartSection } from '@/shared/components/landing-quick-start'
+// LandingQuickStartSection 仅被下方已注释的 Quick Start 区块使用，一并注释保留
+// import { LandingQuickStartSection } from '@/shared/components/landing-quick-start'
 import { SkillCard } from '@/features/skill/skill-card'
 import { SkeletonList } from '@/shared/components/skeleton-loader'
 import { useSearchSkills } from '@/shared/hooks/use-skill-queries'
@@ -39,7 +40,8 @@ export function LandingPage() {
   // statsView / featuresView 属于下方已注释的 Stats 与 Features 区块，一并注释保留
   // const statsView = useInView()
   // const featuresView = useInView()
-  const quickStartView = useInView()
+  // quickStartView 属于下方已注释的 Quick Start 区块，一并注释保留
+  // const quickStartView = useInView()
   const popularView = useInView()
   const latestView = useInView()
 
@@ -208,10 +210,12 @@ export function LandingPage() {
       </section>
       */}
 
-      {/* Quick Start */}
+      {/* [暂隐藏] Quick Start（快速开始）区块，保留代码便于恢复 */}
+      {/*
       <div ref={quickStartView.ref} className={`scroll-fade-up${quickStartView.inView ? ' in-view' : ''}`}>
         <LandingQuickStartSection />
       </div>
+      */}
 
       {/* Popular Downloads Section */}
       <section ref={popularView.ref} className={`relative z-10 w-full py-20 md:py-24 px-6 scroll-fade-up${popularView.inView ? ' in-view' : ''}`} style={{ background: 'var(--bg-page, hsl(var(--background)))' }}>
