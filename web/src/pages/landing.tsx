@@ -1,7 +1,9 @@
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 import { normalizeSearchQuery } from '@/shared/lib/search-query'
-import { PackageOpen, Terminal, Shield, Users, GitBranch, Search as SearchIcon, Settings } from 'lucide-react'
+// SearchIcon 仍用于 Hero 搜索框；其余图标仅被下方已注释的 Features 区块使用，一并注释保留
+// import { PackageOpen, Terminal, Shield, Users, GitBranch, Search as SearchIcon, Settings } from 'lucide-react'
+import { Search as SearchIcon } from 'lucide-react'
 import { LandingQuickStartSection } from '@/shared/components/landing-quick-start'
 import { SkillCard } from '@/features/skill/skill-card'
 import { SkeletonList } from '@/shared/components/skeleton-loader'
@@ -34,8 +36,9 @@ export function LandingPage() {
   }
 
   const heroView = useInView()
-  const statsView = useInView()
-  const featuresView = useInView()
+  // statsView / featuresView 属于下方已注释的 Stats 与 Features 区块，一并注释保留
+  // const statsView = useInView()
+  // const featuresView = useInView()
   const quickStartView = useInView()
   const popularView = useInView()
   const latestView = useInView()
@@ -48,44 +51,46 @@ export function LandingPage() {
     })
   }
 
-  const features = [
-    {
-      icon: <Shield className="w-6 h-6 text-white" strokeWidth={2} />,
-      title: t('landing.features.secure.title'),
-      description: t('landing.features.secure.description'),
-    },
-    {
-      icon: <Users className="w-6 h-6 text-white" strokeWidth={2} />,
-      title: t('landing.features.community.title'),
-      description: t('landing.features.community.description'),
-    },
-    {
-      icon: <PackageOpen className="w-6 h-6 text-white" strokeWidth={2} />,
-      title: t('landing.features.integration.title'),
-      description: t('landing.features.integration.description'),
-    },
-    {
-      icon: <GitBranch className="w-6 h-6 text-white" strokeWidth={2} />,
-      title: t('landing.features.versionControl.title', { defaultValue: 'Version control' }),
-      description: t('landing.features.versionControl.description', { defaultValue: 'Managed release flows keep skill packages traceable and easier to review.' }),
-    },
-    {
-      icon: <Terminal className="w-6 h-6 text-white" strokeWidth={2} />,
-      title: t('landing.features.cli.title', { defaultValue: 'CLI tooling' }),
-      description: t('landing.features.cli.description', { defaultValue: 'Command-line workflows support publishing, installing, and operating skills quickly.' }),
-    },
-    {
-      icon: <Settings className="w-6 h-6 text-white" strokeWidth={2} />,
-      title: t('landing.features.governance.title', { defaultValue: 'Governance' }),
-      description: t('landing.features.governance.description', { defaultValue: 'Built-in review and permission flows help teams enforce skill quality.' }),
-    },
-  ]
-
-  const stats = [
-    { value: '1000+', label: t('landing.stats.skills', { defaultValue: 'Registry items' }) },
-    { value: '50K+', label: t('landing.stats.downloads', { defaultValue: 'Downloads' }) },
-    { value: '200+', label: t('landing.stats.teams', { defaultValue: 'Teams' }) },
-  ]
+  // [暂隐藏] features 数组（「为什么选择 SkillHub」功能特性卡片），保留代码便于恢复
+  // const features = [
+  //   {
+  //     icon: <Shield className="w-6 h-6 text-white" strokeWidth={2} />,
+  //     title: t('landing.features.secure.title'),
+  //     description: t('landing.features.secure.description'),
+  //   },
+  //   {
+  //     icon: <Users className="w-6 h-6 text-white" strokeWidth={2} />,
+  //     title: t('landing.features.community.title'),
+  //     description: t('landing.features.community.description'),
+  //   },
+  //   {
+  //     icon: <PackageOpen className="w-6 h-6 text-white" strokeWidth={2} />,
+  //     title: t('landing.features.integration.title'),
+  //     description: t('landing.features.integration.description'),
+  //   },
+  //   {
+  //     icon: <GitBranch className="w-6 h-6 text-white" strokeWidth={2} />,
+  //     title: t('landing.features.versionControl.title', { defaultValue: 'Version control' }),
+  //     description: t('landing.features.versionControl.description', { defaultValue: 'Managed release flows keep skill packages traceable and easier to review.' }),
+  //   },
+  //   {
+  //     icon: <Terminal className="w-6 h-6 text-white" strokeWidth={2} />,
+  //     title: t('landing.features.cli.title', { defaultValue: 'CLI tooling' }),
+  //     description: t('landing.features.cli.description', { defaultValue: 'Command-line workflows support publishing, installing, and operating skills quickly.' }),
+  //   },
+  //   {
+  //     icon: <Settings className="w-6 h-6 text-white" strokeWidth={2} />,
+  //     title: t('landing.features.governance.title', { defaultValue: 'Governance' }),
+  //     description: t('landing.features.governance.description', { defaultValue: 'Built-in review and permission flows help teams enforce skill quality.' }),
+  //   },
+  // ]
+  //
+  // [暂隐藏] stats 数组（统计数字区：1000+ 项目库 / 50K+ 下载量 / 200+ 团队），保留代码便于恢复
+  // const stats = [
+  //   { value: '1000+', label: t('landing.stats.skills', { defaultValue: 'Registry items' }) },
+  //   { value: '50K+', label: t('landing.stats.downloads', { defaultValue: 'Downloads' }) },
+  //   { value: '200+', label: t('landing.stats.teams', { defaultValue: 'Teams' }) },
+  // ]
 
   return (
     <>
@@ -150,7 +155,8 @@ export function LandingPage() {
           </Link>
         </div>
 
-        {/* Stats */}
+        {/* [暂隐藏] Stats 统计数字区（1000+ 项目库 / 50K+ 下载量 / 200+ 团队），保留代码便于恢复 */}
+        {/*
         <div ref={statsView.ref} className={`flex flex-row justify-center gap-16 md:gap-24 scroll-fade-up${statsView.inView ? ' in-view' : ''}`} style={{ transitionDelay: '0.15s' }}>
           {stats.map((stat) => (
             <div key={stat.label} className="flex flex-col items-center">
@@ -163,9 +169,11 @@ export function LandingPage() {
             </div>
           ))}
         </div>
+        */}
       </main>
 
-      {/* Features Section */}
+      {/* [暂隐藏] Features Section（为什么选择 SkillHub 功能特性区），保留代码便于恢复 */}
+      {/*
       <section ref={featuresView.ref} className={`relative z-10 w-full py-20 md:py-24 px-6 scroll-fade-up${featuresView.inView ? ' in-view' : ''}`} style={{ background: 'var(--bg-page, hsl(var(--background)))' }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
@@ -198,6 +206,7 @@ export function LandingPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Quick Start */}
       <div ref={quickStartView.ref} className={`scroll-fade-up${quickStartView.inView ? ' in-view' : ''}`}>
