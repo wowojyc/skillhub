@@ -23,7 +23,7 @@
   "landing": {
     "hero": {
       "title": "发现与分享 AI 技能",
-      "subtitle": "使用社区驱动的技能构建强大的 AI 代理",
+      "subtitle": "使用技能构建强大的 AI 代理",
       "searchPlaceholder": "搜索技能...",
       "exploreSkills": "探索技能",
       "publishSkill": "发布技能"
@@ -153,7 +153,7 @@
     "browseSkills": "浏览技能",
     "publishSkill": "发布技能",
     "popularTitle": "热门下载",
-    "popularDescription": "社区最受欢迎的技能",
+    "popularDescription": "最受欢迎的技能",
     "latestTitle": "最新发布",
     "latestDescription": "刚刚发布的新技能",
     "viewAll": "查看全部 →",
